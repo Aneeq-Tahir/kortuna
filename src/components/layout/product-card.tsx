@@ -17,7 +17,7 @@ const ProductCard = ({ product, className }: { product: Product; className?: str
          href={`/products/${product.handle}`}
          className={clsx(
             'flex flex-col items-start justify-center gap-5 rounded-xl',
-            'bg-white px-4 py-6 shadow-card',
+            'bg-white p-3 shadow-card',
             className
          )}
       >

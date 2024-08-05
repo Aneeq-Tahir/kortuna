@@ -1,8 +1,8 @@
 'use client';
-import { Collection } from '@/lib/shopify/types';
+import { Collection as ICollection } from '@/lib/shopify/types';
 import Slider from 'nuka-carousel';
 import { useEffect, useState } from 'react';
-import Card from '../collections-card';
+import Collection from '../collection';
 
 const sliderConfig = {
    nextButtonClassName: 'hidden',
@@ -10,7 +10,7 @@ const sliderConfig = {
    pagingDotsContainerClassName: '!hidden'
 };
 
-const Categories = ({ collections }: { collections: Collection[] }) => {
+const CollectionGroup = ({ collections }: { collections: ICollection[] }) => {
    const [slides, setSlides] = useState(3);
 
    useEffect(() => {
@@ -26,9 +26,9 @@ const Categories = ({ collections }: { collections: Collection[] }) => {
 
    return (
       <section className="min-[468px]:ml-6 md:m-0">
-         <div className="mt-10 hidden max-w-[1100px] gap-3 md:mx-6 md:flex min-[1100px]:mx-auto">
+         <div className="mt-10 hidden max-w-[1100px] grid-cols-5 items-center justify-between gap-3 md:mx-6 md:grid min-[1100px]:mx-auto">
             {collections.map((collection, i) => (
-               <Card key={i} item={collection} className="w-full" />
+               <Collection key={i} item={collection} className="w-full" />
             ))}
          </div>
          <Slider
@@ -38,11 +38,11 @@ const Categories = ({ collections }: { collections: Collection[] }) => {
             defaultControlsConfig={sliderConfig}
          >
             {collections.map((collection, i) => (
-               <Card key={i} item={collection} className="mr-4" />
+               <Collection key={i} item={collection} className="mr-4" />
             ))}
          </Slider>
       </section>
    );
 };
 
-export default Categories;
+export default CollectionGroup;

@@ -18,7 +18,7 @@ import {
    getCollectionsQuery
 } from './queries/collection';
 import { getMenuQuery } from './queries/menu';
-import { getMetaObjectQuery } from './queries/metaObject';
+import { getMetaObjectQuery } from './queries/metaobject';
 import { getPageQuery, getPagesQuery } from './queries/page';
 import {
    getProductMetaFieldsQuery,
@@ -409,7 +409,7 @@ export async function getProductMetaFields({ handle, key }: { handle: string; ke
 }
 
 export async function getSliderImages(sliderHandle: string) {
-   let data: any = await getMetaObject({ handle: sliderHandle, type: 'carousel' });
+   let data: any = await getMetaObject({ handle: sliderHandle, type: 'slider' });
    // filtering the data so that we only have the slides object which contains the images
    [data] = data.fields.filter((obj: any) => obj.key === 'slides');
    // removing all the unnecessary data and having the fields array which contains images

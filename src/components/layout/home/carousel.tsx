@@ -33,7 +33,7 @@ const Carousel = ({ images }: { images: IImage[] }) => {
                />
             ))}
          </Slider>
-         <p className="bg-black py-1 text-center text-white">Buy Online or order on Whatsapp</p>
+         {/* <p className="bg-black py-1 text-center text-white">Buy Online or order on Whatsapp</p> */}
       </>
    );
 };

@@ -2,7 +2,11 @@ const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+   content: [
+      './src/app/**/*.{js,ts,jsx,tsx}',
+      './src/components/**/*.{js,ts,jsx,tsx}',
+      './src/icons/**/*.{js,ts,jsx,tsx}'
+   ],
    theme: {
       extend: {
          boxShadow: {
@@ -14,8 +18,9 @@ module.exports = {
             white: '#F2F6F7'
          },
          fontFamily: {
-            price: ['var(--font-poppins)'],
-            bebas: ['var(--font-bebas-neue)']
+            poppins: ['var(--font-poppins)'],
+            bebas: ['var(--font-bebas-neue)'],
+            cinderela: ['var(--font-cinderela)']
          },
          keyframes: {
             fadeIn: {

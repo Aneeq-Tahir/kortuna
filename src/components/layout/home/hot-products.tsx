@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Product = ({ product }: { product: Product }) => {
    // @ts-ignore
-   const image = product.metafield.reference.image;
+   const image = product.featuredImage;
    return (
       <Link href={`/products/${product.handle}`} className="group/product relative w-full">
          <h1 className="absolute bottom-16 z-10 text-3xl text-white group-odd/product:right-5 group-even/product:left-5">

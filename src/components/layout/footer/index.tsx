@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 import FooterMenu from '@/components/layout/footer/footer-menu';
+import { Logo } from '@/icons';
 import { getMenu } from '@/lib/shopify';
-import Image from 'next/image';
 import Newsletter from './newsletter';
 
 export default async function Footer() {
@@ -16,13 +16,7 @@ export default async function Footer() {
          <div className="flex w-full flex-col gap-6 p-12 text-sm">
             <div>
                <Link href="/">
-                  <Image
-                     src={'/logo.svg'}
-                     width={100}
-                     height={56}
-                     className="w-36 md:w-44"
-                     alt="logo"
-                  />
+                  <Logo />
                </Link>
             </div>
             <div className="grid grid-cols-2 gap-x-12 gap-y-6 md:grid-cols-3">

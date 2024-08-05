@@ -1,5 +1,5 @@
-import { Categories, HotProducts, NewArrivals } from '@/components/layout/home';
-import { getCollectionProducts, getCollections } from '@/lib/shopify';
+import { Carousel, CollectionGroup, NewArrivals } from '@/components/layout/home';
+import { getCollectionProducts, getCollections, getSliderImages } from '@/lib/shopify';
 import { Suspense } from 'react';
 
 export const runtime = 'edge';
@@ -15,12 +15,14 @@ export const metadata = {
 export default async function HomePage() {
    const newArrivals = await getCollectionProducts({ collection: 'hidden-new-arrivals' });
    const collections = await getCollections();
+   const carouselImages = await getSliderImages('slider');
 
    return (
       <>
          <Suspense>
-            <Categories collections={collections} />
-            <HotProducts />
+            <Carousel images={carouselImages} />
+            <CollectionGroup collections={collections} />
+            {/* <HotProducts /> */}
             <NewArrivals products={newArrivals} />
          </Suspense>
       </>
